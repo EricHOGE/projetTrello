@@ -14,7 +14,9 @@ class ListController extends Controller
      */
     public function index()
     {
-        
+        $lists = Liste::all();
+
+        return view('home', compact('lists'));
     }
 
     /**
@@ -35,11 +37,11 @@ class ListController extends Controller
      */
     public function store(Request $request)
     {
-        $lists = [
+        $list = [
             'category' => $request->input('category'),
         ];
 
-        Liste::create($lists);
+        Liste::create($list);
 
         return redirect()
             ->route('home')
