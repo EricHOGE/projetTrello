@@ -53,7 +53,7 @@
                         <button class="btn btn-success">Voir le détail des tickets</button>
                 </form>
 
-Envoyer un message dans Laravelephant
+
 
             @endforeach
         </div>
