@@ -29,17 +29,32 @@
         <div class="categorieslists">
             @foreach ($categories as $list)
 
-                <div> {{ $list->category }} </div>
-                <form action="{{ route('lists.destroy', $list->id) }}" method="POST">
+                <div> 
+                <div>
+                    <p>{{ $list->category }}</p>
+                </div>
+
+                <div>
+                    <form action="{{ route('lists.destroy', $list->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button class="btn btn-danger">Supprimer la catégorie</button>
-                </form>
+                        <button class="btn btn-default" type="submit"><i class="fa-solid fa-trash"></i></button>
+                    </form>
+                </div>
+
+                <a href="{{ route ('lists.edit', $list->id) }}"><i class="fa-solid fa-pen-to-square"></i></a>
+
+            </div>
+
+
                 <form action="{{ route('tickets.index', $list->id) }}" method="POST">
                         @csrf
                         @method('GET')
                         <button class="btn btn-success">Voir le détail des tickets</button>
                 </form>
+
+Envoyer un message dans Laravelephant
+
             @endforeach
         </div>
 
