@@ -11,4 +11,8 @@ class Liste extends Model
     protected $guarded = [
         'id'
     ];
+    public function tickets(): HasMany
+    {
+        return $this->hasMany(Ticket::class);
+    }
 }

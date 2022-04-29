@@ -25,3 +25,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('/lists', ListController::class);
+
+Route::resource('/tickets', TicketController::class);

@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Liste;
+use App\Models\Ticket;
 
-class ListController extends Controller
+class TicketController extends Controller
 {
 
     public function index()
     {
-        // 
+        $tickets = Liste::all();
+        return view('home', compact('tickets'));
     }
 
     /**
@@ -20,7 +21,7 @@ class ListController extends Controller
      */
     public function create()
     {
-       return view('lists.create');
+       return view('tickets.create');
     }
 
     /**
@@ -31,15 +32,14 @@ class ListController extends Controller
      */
     public function store(Request $request)
     {
-        $list = [
-            'category' => $request->input('category'),
+        $ticket = [
+            'content' => $request->input('content'),
         ];
 
-        Liste::create($list);
+        Ticket::create($ticket);
 
         return redirect()
-            ->route('home')
-            ->with('message', 'Votre liste a bien été créée');
+            ->route('tickets.index');
     }
 
     /**
@@ -58,19 +58,19 @@ class ListController extends Controller
 
     public function edit($id)
     {
-        $list =Liste::findOrfail($id);
+        $ticket = Ticket::findOrfail($id);
 
-        return view('lists.edit', compact('list'));
+        return view('tickets.edit', compact('ticket'));
     }
 
     public function update(Request $request, $id)
     {
         
-        $list = Liste::findOrfail($id);
-        $list->category = $request->input('category');
-        $list->save();
+        $ticket = Ticket::findOrfail($id);
+        $ticket->category = $request->input('content');
+        $ticket->save();
 
-        return redirect()->route ('home');
+        return redirect()->route ('tickets.index');
 
 
     }
@@ -78,9 +78,9 @@ class ListController extends Controller
 
     public function destroy($id)
     {
-        $list = Liste::findOrfail($id);
-        $list->delete();
+        $ticket = Ticket::findOrfail($id);
+        $ticket->delete();
 
-        return redirect()->route('home');
+        return redirect()->route('tickets.index');
     }
 }
