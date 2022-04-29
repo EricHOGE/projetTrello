@@ -27,11 +27,16 @@
     <div class="card">
         <h1>Categories</h1>
         <div class="categorieslists">
-        @foreach ($lists as $list)
+            @foreach ($categories as $list)
 
-            <div> {{ $list->category }} </div>
-        @endforeach
-</div>
+                <div> {{ $list->category }} </div>
+                <form action="{{ route('lists.destroy', $list->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-danger">Supprimer la catégorie</button>
+                </form>
+            @endforeach
+        </div>
 
     </div>
 

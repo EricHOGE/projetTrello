@@ -7,16 +7,10 @@ use App\Models\Liste;
 
 class ListController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        $lists = Liste::all();
-
-        return view('home', compact('lists'));
+        // 
     }
 
     /**
