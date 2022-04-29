@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Ticket extends Model
 {
     use HasFactory;
+
+    protected $guarded = [
+        'id',
+    ];
+    public function list(): BelongsTo
+    {
+        return $this->belongsTo(Liste::class);
+    }
 }
