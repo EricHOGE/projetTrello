@@ -17,7 +17,7 @@
                         </div>
                     @endif
 
-                    <a href="{{ route ('lists.create') }}"> <input type="button" value="Créer vos catégories"></a>
+                    <a href="{{ route ('tickets.create') }}"> <input type="button" value="Créer un ticket à votre catégorie"></a>
                 </div>
             </div>
         </div>

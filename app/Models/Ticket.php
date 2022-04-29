@@ -14,6 +14,6 @@ class Ticket extends Model
     ];
     public function list(): BelongsTo
     {
-        return $this->belongsTo(Liste::class);
+        return $this->belongsTo(Liste::class)->where($id);
     }
 }

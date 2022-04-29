@@ -15,4 +15,5 @@ class Liste extends Model
     {
         return $this->hasMany(Ticket::class);
     }
+    
 }

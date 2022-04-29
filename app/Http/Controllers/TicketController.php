@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Ticket;
+use App\Models\Liste;
 
 class TicketController extends Controller
 {
 
     public function index()
     {
-        $tickets = Liste::all();
-        return view('home', compact('tickets'));
+        $tickets = Ticket::all();
+        return view('tickets.index', compact('tickets'));
     }
 
     /**
@@ -42,17 +43,16 @@ class TicketController extends Controller
             ->route('tickets.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function show($id)
     {
-        // $list = Liste::findOrfail($id);
+        Liste::with('tickets')->get();
+        $ticket = Ticket::findOrfail($id);
+        $ticket = Ticket::with('content')
+            ->where('id',$id)
+            ->first();
 
-        // return view
+        return view('tickets.show', compact('content'));
     }
 
 
