@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Liste;
 
 class ListController extends Controller
 {
@@ -13,7 +14,7 @@ class ListController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -23,7 +24,7 @@ class ListController extends Controller
      */
     public function create()
     {
-        //
+       return view('lists.create');
     }
 
     /**
@@ -34,7 +35,15 @@ class ListController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $lists = [
+            'category' => $request->input('category'),
+        ];
+
+        Liste::create($lists);
+
+        return redirect()
+            ->route('home')
+            ->with('message', 'Votre liste a bien été créée');
     }
 
     /**
@@ -45,40 +54,37 @@ class ListController extends Controller
      */
     public function show($id)
     {
-        //
+        // $list = Liste::findOrfail($id);
+
+        // return view
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
-        //
+        $list =Liste::findOrfail($id);
+
+        return view('lists.edit', compact('list'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        
+        $list = Liste::findOrfail($id);
+        $list->category = $request->input('category');
+        $list->save();
+
+        return redirect()->route ('home');
+
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
-        //
+        $list = Liste::findOrfail($id);
+        $list->delete();
+
+        return redirect()->route('home');
     }
 }
