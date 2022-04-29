@@ -6,12 +6,13 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div> --}}
-                <div class="logo" style="/* text-align: center; */ /* margin-bottom: 15%; */width: 100%;height: 100%;background-image: url(images/fondvert.png);background-attachment: fixed;background-size: cover;position: fixed;top: 0px;left: 0px; background-position-y:-178px">
-                    
+{{--                 <div class="logo" style="/* text-align: center; */ /* margin-bottom: 15%; */width: 100%;height: 100%;background-image: url(images/fondvert.png);background-attachment: fixed;background-size: cover;position: fixed;top: 0px;left: 0px; background-position-y:-178px">
+ --}}                    
                 </div>
 <br><br><br><br><br><br><br><br><br><br><br><br>
-                <div class="card-body" style="position: relative">
-                    <form method="POST" action="{{ route('register') }}">
+                <div class="card-body" style="margin-top:-13%"">
+                    <h1 style="text-align:center">S'INSCRIRE</h1>
+                    <form method="POST" action="{{ route('register') }}" style="background-color:rgb(15, 218, 174); padding-top:6%;">
                         @csrf
 
                         <div class="row mb-3">
