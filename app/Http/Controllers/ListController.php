@@ -45,9 +45,7 @@ class ListController extends Controller
 
     public function show($id)
     {
-        // $list = Liste::findOrfail($id);
-
-        // return view
+        // 
     }
 
 
