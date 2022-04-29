@@ -35,6 +35,11 @@
                         @method('DELETE')
                         <button class="btn btn-danger">Supprimer la catégorie</button>
                 </form>
+                <form action="{{ route('lists.show', $list->id) }}" method="POST">
+                        @csrf
+                        @method('GET')
+                        <button class="btn btn-success">Voir le détail des tickets</button>
+                </form>
             @endforeach
         </div>
 

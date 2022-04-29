@@ -42,12 +42,7 @@ class ListController extends Controller
             ->with('message', 'Votre liste a bien été créée');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         // $list = Liste::findOrfail($id);
