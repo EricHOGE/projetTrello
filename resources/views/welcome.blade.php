@@ -27,23 +27,23 @@
                     @auth
                         <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Connexion</a>
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500" style="font-size:172%;" >SE CONNECTER</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">S'inscrire</a>
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500" style="font-size:200%; background-color:rgb(22, 201, 162); border-radius:4%" >S'INSCRIRE</a>
                         @endif
                     @endauth
                 </div>
             @endif
 
                 <div class="logo" style="text-align: center; margin-bottom: 15%;">
-                    <img src="images/todoteam2.png" alt="logo" height="260 px">
-                    <h1>Plus qu'un travail. C'est une manière de travailler ensemble.</h1>
-                    <h3>Démarrez avec un tableau, des listes et des cartes Trello. Personnalisez et ajoutez d'autres fonctionnalités à mesure que le travail de votre équipe s'élargit. Gérez des projets, organisez des tâches et développez l'esprit d'équipe, le tout au même endroit.</h3>
+                    <img src="images/todoteam2.png" alt="logo" height="260 px" style="margin-top:5%;">
+                    <h1 style="margin-top:4%">Plus qu'un travail. C'est une manière de travailler ensemble.</h1>
+                    <h3 style=margin-left:20%;margin-right:20%>Démarrez avec un tableau, des listes et des cartes Trello. Personnalisez et ajoutez d'autres fonctionnalités à mesure que le travail de votre équipe s'élargit. Gérez des projets, organisez des tâches et développez l'esprit d'équipe, le tout au même endroit.</h3>
                     <br><br><br>
 
 
-                    <div class="listcolumn" style="display:flex;justify-content: space-evenly;padding: 20%;gap: 9%;text-align: left;">
+                    <div class="listcolumn" style="display:flex;justify-content: space-evenly;padding-right: 20%;padding-left: 20%;gap: 9%;text-align: center; background-color:rgb(15, 218, 174)">
                         <div class="colummn1">
                             <h1>Fonctionnalités conçues pour aider votre équipe à réussir</h1>
                             <p>Pour soutenir une équipe productive, il faut un outil puissant (et plein d'en-cas). Qu'il s'agisse de réunions, de projets, d'événements ou encore de la définition d'objectifs, les fonctionnalités intuitives de Trello permettent à n'importe quelle équipe de configurer et de personnaliser rapidement des flux de production pour à peu près tout.</p>
@@ -57,6 +57,8 @@
                             <p>Les cartes Trello constituent votre portail pour un travail plus organisé où chaque élément de votre tâche peut être géré, suivi et partagé avec les membres de l'équipe. Ouvrez une carte pour découvrir un écosystème de checklists, de dates limites, de pièces jointes, de conversations et plus encore.</p>
                         </div>
                     </div>
+
+                    <div class="container py-3"> <div class="row"> <div class="col-lg-8 d-lg-flex flex-row-reverse text-center align-items-center"> <p class="mb-2 mb-lg-0">Bientôt disponible.</p> </div> <div class="col-6 col-md-3 offset-md-3 offset-lg-0 col-lg-2 pr-1">  <img src="https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/spirit/apps/0b6d7bcb7ee4c84ef5e8141269925e9a/apple.svg" alt="Disponible sur l'App&nbsp;Store" class="w-100 img-fluid" width="217" height="64"> </a> </div> <div class="col-6 col-md-3 col-lg-2 pl-1">  <img src="https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/spirit/apps/c3a2a289499157072145f1bd73d7610d/google.svg" alt="Téléchargez-les sur Google&nbsp;Play" class="w-100 img-fluid" width="217" height="64"> </a> </div> </div> </div>
                 </div>
     </body>
 </html>
