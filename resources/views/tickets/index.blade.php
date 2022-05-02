@@ -35,6 +35,8 @@
             @foreach ($tickets as $ticket)
 
                 <div> {{ $ticket->content }} </div>
+                <a href="{{ route ('tickets.edit', $ticket->id) }}"><i class="fa-solid fa-pen-to-square"></i></a>
+
                 <form action="{{ route('tickets.destroy', $ticket->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
