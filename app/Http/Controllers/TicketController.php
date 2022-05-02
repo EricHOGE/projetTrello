@@ -11,18 +11,13 @@ class TicketController extends Controller
 
     public function index()
     {
-        $tickets = Ticket::all();
-        return view('tickets.index', compact('tickets'));
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-       return view('tickets.create');
+        return view('tickets.create');
     }
 
     /**
@@ -35,6 +30,7 @@ class TicketController extends Controller
     {
         $ticket = [
             'content' => $request->input('content'),
+            'liste_id' => $request->input('liste_id')
         ];
 
         Ticket::create($ticket);
@@ -43,16 +39,11 @@ class TicketController extends Controller
             ->route('tickets.index');
     }
 
- 
-    public function show($id, $liste_id)
-    {
-        Liste::with('tickets')->get();
-        $ticket = Ticket::findOrfail($id);
-        $ticket = Ticket::with('content')
-            ->where('liste_id',$id)
-            ->first();
 
-        return view('tickets.show', compact('content'));
+    public function show($liste_id)
+    {
+        $tickets = Ticket::where('liste_id', $liste_id)->get();
+        return view('tickets.index', compact('tickets', 'liste_id'));
     }
 
 
@@ -65,14 +56,12 @@ class TicketController extends Controller
 
     public function update(Request $request, $id)
     {
-        
+
         $ticket = Ticket::findOrfail($id);
         $ticket->category = $request->input('content');
         $ticket->save();
 
-        return redirect()->route ('tickets.index');
-
-
+        return redirect()->route('tickets.index');
     }
 
 

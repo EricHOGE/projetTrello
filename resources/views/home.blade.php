@@ -47,13 +47,13 @@
             </div>
 
 
-                <form action="{{ route('tickets.index', $list->id) }}" method="POST">
+                <form action="{{ route('tickets.show', ["ticket" => $list->id]) }}" method="POST">
                         @csrf
                         @method('GET')
                         <button class="btn btn-success">Voir le détail des tickets</button>
                 </form>
 
-                @yield('tickets')
+                
 
             @endforeach
         </div>

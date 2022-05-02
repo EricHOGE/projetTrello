@@ -81,7 +81,9 @@
         <main >
             <div>
             @yield('content')
-            @yield('tickets')
+                <div>
+                    @yield('tickets')
+                </div>
             </div>
         </main>
     </div>

@@ -17,8 +17,23 @@
                         </div>
                     @endif
 
-                    <a href="{{ route ('tickets.create') }}"> <input type="button" value="Créer un ticket à votre catégorie"></a>
+                     {{-- <form action="{{ route('tickets.store')}}" method="POST">
+                        @csrf
+                        <label for="content">Contenu de votre ticket</label>
+                        <br>
+                        <input type="hidden" name="liste_id" value="{{ $liste_id }}" />
+                        <input type="text" name="content">
+                        <button type="submit" class="btn btn-primary">Ajouter la tâche</button>
+                    </form> --}}
+                    @foreach ($tickets as $ticket)
+
+                <div> 
+                    <div>
+                        <p>{{ $ticket->content }}</p>
+                    </div>
+
                 </div>
+                @endforeach
             </div>
         </div>
     </div>

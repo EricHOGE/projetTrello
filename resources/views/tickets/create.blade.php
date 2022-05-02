@@ -10,6 +10,7 @@
         @csrf
         <label for="content">Contenu de votre ticket</label>
         <br>
+        <input type="hidden" name="liste_id" value="{{}}" />
         <input type="text" name="content">
         <button type="submit" class="btn btn-primary">Ajouter la tâche</button>
         </form>
