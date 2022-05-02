@@ -17,10 +17,25 @@
                         </div>
                     @endif
 
-                    <a href="{{ route ('tickets.create') }}"> <input type="button" value="Créer un ticket à votre catégorie"></a>
-                    <a href="{{ route ('home') }}"> <input type="button" value="Retour aux catégories"></a>
+                     <form action="{{ route('tickets.store')}}" method="POST">
+                        @csrf
+                        <label for="content">Contenu de votre ticket</label>
+                        <br>
+                        <input type="text" name="content">
+                        <input type="hidden" name="liste_id" value="{{ $liste_id }}" />
+                        
+                        <button type="submit" class="btn btn-primary">Ajouter la tâche</button>
+                    </form>
+                  
 
+                
+                   
                 </div>
+              
+
+                 
+                <a href="{{ route ('home') }}"> <input type="button" value="Retour aux catégories"></a>
+
             </div>
         </div>
     </div>
@@ -35,6 +50,8 @@
             @foreach ($tickets as $ticket)
 
                 <div> {{ $ticket->content }} </div>
+                <a href="{{ route ('tickets.edit', $ticket->id) }}"><i class="fa-solid fa-pen-to-square"></i></a>
+
                 <form action="{{ route('tickets.destroy', $ticket->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
