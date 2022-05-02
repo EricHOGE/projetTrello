@@ -79,7 +79,10 @@
         </nav>
 
         <main >
+            <div>
             @yield('content')
+            @yield('tickets')
+            </div>
         </main>
     </div>
 </body>

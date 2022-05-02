@@ -18,12 +18,16 @@
                     @endif
 
                     <a href="{{ route ('tickets.create') }}"> <input type="button" value="Créer un ticket à votre catégorie"></a>
+                    <a href="{{ route ('home') }}"> <input type="button" value="Retour aux catégories"></a>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+
+    
 
     <div class="card">
         <h1>Tickets</h1>
