@@ -11,7 +11,8 @@ class TicketController extends Controller
 
     public function index()
     {
-
+        $tickets = Ticket::all();
+        return view('tickets.index', compact('tickets'));
     }
 
 
@@ -36,7 +37,7 @@ class TicketController extends Controller
         Ticket::create($ticket);
 
         return redirect()
-            ->route('tickets.index');
+            ->route('tickets.show', ["ticket" => $ticket["liste_id"]]);
     }
 
 
@@ -70,6 +71,6 @@ class TicketController extends Controller
         $ticket = Ticket::findOrfail($id);
         $ticket->delete();
 
-        return redirect()->route('tickets.index');
+        return redirect()->route('tickets.show', ["ticket" => $ticket["liste_id"]]);
     }
 }
