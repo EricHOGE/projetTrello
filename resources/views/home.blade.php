@@ -24,40 +24,39 @@
 </div>
 
 
-    <div class="card">
-        <h1>Categories</h1>
+    
+        <h1 class="title">Liste</h1>
+
+    <div class="cardList">   
+        @foreach ($categories as $list)
         <div class="categorieslists">
-            @foreach ($categories as $list)
-
-                <div> 
+            <div class="lists">
                 <div>
-                    <p>{{ $list->category }}</p>
-                </div>
-
-                <div>
+                    <h2>{{ $list->category }}</h2>
+                </div>  
+                
+                <div class="editIcon">
+                    <a href="{{ route ('lists.edit', $list->id) }}"><i class="fa-solid fa-pen-to-square"></i></a>
+                </div>  
+                
+                <div class="trashIcon">
                     <form action="{{ route('lists.destroy', $list->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-default" type="submit"><i class="fa-solid fa-trash"></i></button>
                     </form>
-                </div>
-
-                <a href="{{ route ('lists.edit', $list->id) }}"><i class="fa-solid fa-pen-to-square"></i></a>
-
+                </div>   
             </div>
-
-
+            <div class="ticket">
                 <form action="{{ route('tickets.index', $list->id) }}" method="POST">
-                        @csrf
-                        @method('GET')
-                        <button class="btn btn-success">Voir le détail des tickets</button>
+                    @csrf
+                    @method('GET')
+                    <button class="btn btn-success">Voir le détail des tickets</button>
                 </form>
-
-                @yield('tickets')
-
-            @endforeach
+                @yield('tickets') 
+            </div>
         </div>
-
+        @endforeach
     </div>
 
   

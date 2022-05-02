@@ -1,0 +1,21 @@
+.cardList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.categorieslists {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(192, 192, 192);
+    width: 25%;
+    height: 25vh;
+    align-items: center;
+}
+.lists {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.trashIcon {
+    align-items: flex-end;
+}

@@ -74,5 +74,5 @@
         </div>
     </div>
 </div>
-<img src="images/fondbleu.png" style="width: -webkit-fill-available"
+<img src="images/fondorangef.png" style="width: -webkit-fill-available"
 @endsection
