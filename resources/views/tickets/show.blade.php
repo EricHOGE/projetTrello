@@ -1,6 +1,8 @@
 @extends('layout.app')
 
 @section('contenu')
+
+
     <div>
         <h1>Détail du ticket</h1>
 
