@@ -8,7 +8,7 @@
         @csrf
         @method('PUT')
 
-        <label for="category">Modifier votre catégorie</label>
+        <label for="category">Modifier votre ticket</label>
         <br>
         <input type="text" name="category" value="{{$ticket->content}}">
         <button type="submit" class="btn btn-success">Mettre à jour</button>

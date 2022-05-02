@@ -24,26 +24,28 @@
 </div>
 
 
-    <div class="card">
-        <h1>Categories</h1>
+    
+        <h1 class="title">Liste</h1>
+
+    <div class="cardList">   
+        @foreach ($categories as $list)
         <div class="categorieslists">
-            @foreach ($categories as $list)
-
-                <div> 
+            <div class="lists">
                 <div>
-                    <p>{{ $list->category }}</p>
-                </div>
-
-                <div>
+                    <h2>{{ $list->category }}</h2>
+                </div>  
+                
+                <div class="editIcon">
+                    <a href="{{ route ('lists.edit', $list->id) }}"><i class="fa-solid fa-pen-to-square"></i></a>
+                </div>  
+                
+                <div class="trashIcon">
                     <form action="{{ route('lists.destroy', $list->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-default" type="submit"><i class="fa-solid fa-trash"></i></button>
                     </form>
-                </div>
-
-                <a href="{{ route ('lists.edit', $list->id) }}"><i class="fa-solid fa-pen-to-square"></i></a>
-
+                </div>   
             </div>
 
 
@@ -57,7 +59,7 @@
 
             @endforeach
         </div>
-
+        @endforeach
     </div>
 
   

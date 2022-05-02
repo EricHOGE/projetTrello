@@ -58,7 +58,7 @@ class TicketController extends Controller
     {
 
         $ticket = Ticket::findOrfail($id);
-        $ticket->category = $request->input('content');
+        $ticket->content = $request->input('content');
         $ticket->save();
 
         return redirect()->route('tickets.index');
