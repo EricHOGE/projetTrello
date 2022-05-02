@@ -53,7 +53,7 @@
                         <button class="btn btn-success">Voir le détail des tickets</button>
                 </form>
 
-
+                @yield('tickets')
 
             @endforeach
         </div>

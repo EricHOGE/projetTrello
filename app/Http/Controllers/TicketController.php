@@ -44,12 +44,12 @@ class TicketController extends Controller
     }
 
  
-    public function show($id)
+    public function show($id, $liste_id)
     {
         Liste::with('tickets')->get();
         $ticket = Ticket::findOrfail($id);
         $ticket = Ticket::with('content')
-            ->where('id',$id)
+            ->where('liste_id',$id)
             ->first();
 
         return view('tickets.show', compact('content'));

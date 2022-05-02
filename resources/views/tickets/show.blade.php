@@ -4,15 +4,11 @@
     <div>
         <h1>Détail du ticket</h1>
 
-        <div class="card">
-            <div class="card-header">
-                {{ $ticket->content }}
-            </div>
-            <div class="card-body">
-               
-                <p class="card-text">{{ $ticket->content }}</p>
-     
-            </div>
-        </div>
+   @foreach ($tickets as $liste_id => $ticket)
+    <br>
+        {{ $id }}
+        <a href="{{ route("tickets.show", $liste_id) }}" class="btn btn-primary">Voir Le détail</a>
+    <hr>
+    @endforeach
     </div>
 @endsection
