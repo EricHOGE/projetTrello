@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
                 --}}
-                <br><br><br><br><br>
+                {{-- <br><br><br><br><br> --}}
                 <div class="card-body" style="width:25%; text-align:center; right:35%; position:absolute;">
                     <h1>SE CONNECTER</h1>
                     <br>
