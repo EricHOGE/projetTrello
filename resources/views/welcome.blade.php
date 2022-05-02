@@ -43,12 +43,12 @@
 
                 <div class="logo" style="text-align: center; margin-bottom: 15%;">
                     <img src="images/todoteam2.png" alt="logo" height="260 px" style="margin-top:5%;">
-                    <h1 style="margin-top:4%">Plus qu'un travail. C'est une manière de travailler ensemble.</h1>
+                    <h1 style="margin-top:4%"; text-decoration>Plus qu'un travail. C'est une manière de travailler ensemble.</h1>
                     <h3 style=margin-left:20%;margin-right:20%>Démarrez avec un tableau, des listes et des cartes Trello. Personnalisez et ajoutez d'autres fonctionnalités à mesure que le travail de votre équipe s'élargit. Gérez des projets, organisez des tâches et développez l'esprit d'équipe, le tout au même endroit.</h3>
                     <br><br><br>
 
 
-                    <div class="listcolumn" style="display:flex;justify-content: space-evenly;padding-right: 20%;padding-left: 20%;gap: 9%;text-align: center; background-image: url('../images/fondrouge.png');">
+                    <div class="listcolumn" style="display:flex;justify-content: space-evenly;padding-right: 20%;padding-left: 20%;gap: 9%;text-align: center; background-color:rgba(255, 166, 0, 0.075);">
                         <div class="colummn1">
                             <h1>Fonctionnalités conçues pour aider votre équipe à réussir</h1>
                             <p>Pour soutenir une équipe productive, il faut un outil puissant (et plein d'en-cas). Qu'il s'agisse de réunions, de projets, d'événements ou encore de la définition d'objectifs, les fonctionnalités intuitives de Trello permettent à n'importe quelle équipe de configurer et de personnaliser rapidement des flux de production pour à peu près tout.</p>
@@ -65,6 +65,7 @@
 
                     <div class="container py-3"> <div class="row"> <div class="col-lg-8 d-lg-flex flex-row-reverse text-center align-items-center"> <p class="mb-2 mb-lg-0">Bientôt disponible.</p> </div> <div class="col-6 col-md-3 offset-md-3 offset-lg-0 col-lg-2 pr-1">  <img src="https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/spirit/apps/0b6d7bcb7ee4c84ef5e8141269925e9a/apple.svg" alt="Disponible sur l'App&nbsp;Store" class="w-100 img-fluid" width="217" height="64"> </a> </div> <div class="col-6 col-md-3 col-lg-2 pl-1">  <img src="https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/spirit/apps/c3a2a289499157072145f1bd73d7610d/google.svg" alt="Téléchargez-les sur Google&nbsp;Play" class="w-100 img-fluid" width="217" height="64"> </a> </div> </div> </div>
                 </div>
+                <img src="/images/orangeU.png" style="position:absolute; width:100%;bottom:99%">
                 <img src="/images/orangeD.png" style="position:absolute; width:100%;top:100%">
                 <img src="/images/orangeL.png" style="position:absolute; height:100%;right:96%">
                 <img src="/images/orangeR.png" style="position:absolute; height:100%;left:96%">

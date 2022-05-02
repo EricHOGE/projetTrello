@@ -60,6 +60,6 @@
     </form>
 </div>
 
-<img src="images/fondvert.png" style="width: -webkit-fill-available"
+<img src="images/fondorange.png" style="width: -webkit-fill-available"
 
 @endsection
