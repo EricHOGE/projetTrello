@@ -43,7 +43,7 @@
 
 
     
-        <h1 class="title">Liste</h1>
+        <h1 class="title" style="display:flex; justify-content:center">Liste des catégories</h1>
 
     <div class="cardList">
         @foreach ($categories as $list)
