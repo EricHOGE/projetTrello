@@ -10,9 +10,10 @@
  --}}                    
 </div>
 
-<br><br><br><br><br>
+{{-- <br><br><br><br><br> --}}
 
 <div class="card-body" style="width:25%; text-align:center; right:35%; position:absolute;">
+   
     <h1>S'INSCRIRE</h1>
     <br>
     <form method="POST" action="{{ route('register') }}">
@@ -60,6 +61,6 @@
     </form>
 </div>
 
-<img src="images/fondorange.png" style="width: -webkit-fill-available"
+ <img src="images/fondorange.png" style="width: -webkit-fill-available">
 
 @endsection

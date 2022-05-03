@@ -9,7 +9,7 @@
    @foreach ($tickets as $liste_id => $ticket)
     <br>
         {{ $id }}
-        <a href="{{ route("tickets.show", $liste_id) }}" class="btn btn-primary">Voir Le détail</a>
+        <a href="{{ route( 'tickets.show', $liste_id) }}" class="btn btn-primary">Voir Le détail</a>
     <hr>
     @endforeach
     </div>
