@@ -50,7 +50,7 @@
                 </div>   
             </div>
             <div class="categoriestickets">
-                @foreach ($tickets as $ticket)
+                @foreach ($list->tickets()->get() as $ticket)
 
                     <div> {{ $ticket->content }} </div>
                     <a href="{{ route ('tickets.edit', $ticket->id) }}"><i class="fa-solid fa-pen-to-square"></i></a>

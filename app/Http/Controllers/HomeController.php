@@ -26,15 +26,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-        $tickets = Ticket::all();
         $categories = Liste::all();
-        return view('home', compact('tickets','categories'));
+        return view('home', compact('categories'));
         // $categories = Liste::all();
         // return view('home', compact('categories'));
 
 
-        
+
     }
     public function show($liste_id)
     {
