@@ -17,7 +17,27 @@
                         </div>
                     @endif
 
-                    <a href="{{ route ('lists.create') }}"> <input type="button" value="Créer vos catégories"></a>
+                    <div class="card-header">{{ __('Créez votre nouvelle catégorie') }}</div>
+
+                    <div class="row ">
+                        <div class="col-4 todo">
+                            <form action="{{ route('lists.store')}}" method="POST">
+                            @csrf
+                            <br>
+                            <input type="text" name="category">
+                            <br>
+                            <br>
+                            <button type="submit" class="btn btn-success">Créer la catégorie</button>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    {{-- <a href="{{ route ('lists.create') }}"> <input type="button" value="Créer vos catégories"></a> --}}
                 </div>
             </div>
         </div>
