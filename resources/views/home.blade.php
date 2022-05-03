@@ -68,11 +68,11 @@
                         <button class="btn btn-default" type="submit"><i class="fa-solid fa-trash"></i></button>
                     </form>
 
-                    <form action="{{ route('tickets.store')}}" method="POST">
+                    <form action="{{ route('tickets.store', ["ticket" => $list->id])}}" method="POST">
                     @csrf
                     <label for="content">Contenu de votre ticket</label>
                     <br>
-                    {{-- <input type="hidden" name="liste_id" value="{{$id}}" /> --}}
+                    <input type="hidden" name="liste_id" value="{{$list->id}}" />
                     <input type="text" name="content">
                     <button type="submit" class="btn btn-primary">Ajouter la tâche</button>
                     </form>
