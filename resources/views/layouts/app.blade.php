@@ -80,7 +80,7 @@
         </nav>
 
         <main >
-            <div>
+            <div class="register">
             @yield('content')
                 <div>
                     @yield('tickets')
