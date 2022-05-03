@@ -6,6 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Get Started!') }}</div>
+                 <div class="card-header">{{ __('Tickets') }}</div>
     
 
                 <div class="card-body">
@@ -27,7 +28,8 @@
     
         <h1 class="title">Liste</h1>
 
-    <div class="cardList">   
+    <div class="cardList">
+        <div>
         @foreach ($categories as $list)
         <div class="categorieslists">
             <div class="lists">
@@ -47,19 +49,30 @@
                     </form>
                 </div>   
             </div>
+            <div class="categoriestickets">
+                @foreach ($tickets as $ticket)
 
+                    <div> {{ $ticket->content }} </div>
+                    <a href="{{ route ('tickets.edit', $ticket->id) }}"><i class="fa-solid fa-pen-to-square"></i></a>
 
-                <form action="{{ route('tickets.show', ["ticket" => $list->id]) }}" method="POST">
+                    <form action="{{ route('tickets.destroy', $ticket->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger">Supprimer le ticket</button>
+                    </form>
+                
+                @endforeach
+            </div>
+        </div>
+                {{-- <form action="{{ route('tickets.show', ["ticket" => $list->id]) }}" method="POST">
                         @csrf
                         @method('GET')
-                        <button class="btn btn-success">Voir le détail des tickets</button>
-                </form>
+                        <button class="btn btn-success">Voir le détail des tickets</button> --}}
+                {{-- </form> --}}
 
-                
-
-           
-        </div>
+        
         @endforeach
+        </div>   
     </div>
 
   
