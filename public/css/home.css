@@ -1,6 +1,11 @@
 .cardList {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
+    margin: 30px;
+    gap: 4rem;
+    justify-content: left;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 .categorieslists {
@@ -9,11 +14,11 @@
     border: 4px solid rgb(211 188 165);
     background-color: #e9daccc2;
     border-radius: 8px;
-    box-shadow: 10px 10px 5px 5px rgb(0 0 0 / 20%);
     width: 25%;
     height: 25vh;
+    box-shadow: 10px 10px 5px 5px rgb(0 0 0 / 20%);
     align-items: center;
-    background-image: url("/images/fondrouge.png");
+    min-width: 30%;
 }
 .lists {
     display: flex;
