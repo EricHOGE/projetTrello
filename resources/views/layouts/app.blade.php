@@ -57,7 +57,7 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
@@ -80,10 +80,13 @@
         </nav>
 
         <main >
-            <div class="register">
-            @yield('content')
-                <div>
-                    @yield('tickets')
+            <div class="nice" style="background:url(/images/nice.png);background-size:cover; width:100%; height: 100vh; background-repeat: no-repeat; background-attachment: fixed;">
+            
+                <div class="register">
+                @yield('content')
+                    <div>
+                        @yield('tickets')
+                    </div>
                 </div>
             </div>
         </main>
