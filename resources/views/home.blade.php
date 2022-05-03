@@ -5,8 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Get Started!') }}</div>
-                 <div class="card-header">{{ __('Tickets') }}</div>
+
     
 
                 <div class="card-body">
@@ -32,12 +31,6 @@
                         </div>
                     </div>
 
-
-
-
-
-
-                    {{-- <a href="{{ route ('lists.create') }}"> <input type="button" value="Créer vos catégories"></a> --}}
                 </div>
             </div>
         </div>
@@ -49,7 +42,6 @@
         <h1 class="title">Liste</h1>
 
     <div class="cardList">
-        <div>
         @foreach ($categories as $list)
         <div class="categorieslists">
             <div class="lists">
@@ -67,7 +59,9 @@
                         @method('DELETE')
                         <button class="btn btn-default" type="submit"><i class="fa-solid fa-trash"></i></button>
                     </form>
-
+                    <br>
+                    <br>
+                    <br>
                     <form action="{{ route('tickets.store', ["ticket" => $list->id])}}" method="POST">
                     @csrf
                     <label for="content">Contenu de votre ticket</label>
@@ -82,9 +76,9 @@
                 @foreach ($list->tickets()->get() as $ticket)
 
                     <div> {{ $ticket->content }} </div>
-                    <a href="{{ route ('tickets.edit', $ticket->id) }}"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href="{{ route ('tickets.edit', $ticket) }}"><i class="fa-solid fa-pen-to-square"></i></a>
                     
-                    <form action="{{ route('tickets.destroy', $ticket->id) }}" method="POST">
+                    <form action="{{ route('tickets.destroy', $ticket) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger">Supprimer le ticket</button>
@@ -93,12 +87,6 @@
                 @endforeach
             </div>
         </div>
-                {{-- <form action="{{ route('tickets.show', ["ticket" => $list->id]) }}" method="POST">
-                        @csrf
-                        @method('GET')
-                        <button class="btn btn-success">Voir le détail des tickets</button> --}}
-                {{-- </form> --}}
-
         
         @endforeach
         </div>   

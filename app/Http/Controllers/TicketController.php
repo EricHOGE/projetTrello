@@ -21,12 +21,7 @@ class TicketController extends Controller
         return view('tickets.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         $ticket = [
@@ -38,7 +33,7 @@ class TicketController extends Controller
 
         return redirect()
             ->route('home');
-            // ->route('tickets.show', ["ticket" => $ticket["liste_id"]]);
+          
     }
 
 
@@ -53,7 +48,7 @@ class TicketController extends Controller
     {
         $ticket = Ticket::findOrfail($id);
 
-        return view('tickets.edit', compact('ticket'));
+        return view('tickets.edit', compact('ticket','id'));
     }
 
     public function update(Request $request, $id)
@@ -63,15 +58,16 @@ class TicketController extends Controller
         $ticket->content = $request->input('content');
         $ticket->save();
 
-        return redirect()->route('tickets.index');
+        return redirect()->route('home');
     }
 
 
     public function destroy($id)
     {
+       
         $ticket = Ticket::findOrfail($id);
         $ticket->delete();
 
-        return redirect()->route('tickets.show', ["ticket" => $ticket["liste_id"]]);
+        return redirect()->back();
     }
 }

@@ -1,6 +1,11 @@
 .cardList {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
+    margin: 30px;
+    gap: 4rem;
+    justify-content: left;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 .categorieslists {
@@ -13,7 +18,7 @@
     /* width: 25%;
     height: 25vh; */
     align-items: center;
-    background-image: url("/images/fondrouge.png");
+    min-width: 30%;
 }
 .lists {
     display: flex;
