@@ -24,6 +24,10 @@ class TicketController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'content' => 'required|string|max:255'
+        ]);
+        
         $ticket = [
             'content' => $request->input('content'),
             'liste_id' => $request->input('liste_id')
