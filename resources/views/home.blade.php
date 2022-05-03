@@ -67,13 +67,7 @@
                         @method('DELETE')
                         <button class="btn btn-default" type="submit"><i class="fa-solid fa-trash"></i></button>
                     </form>
-                </div>   
-            </div>
-            <div class="categoriestickets">
-                @foreach ($list->tickets()->get() as $ticket)
 
-                    <div> {{ $ticket->content }} </div>
-                    <a href="{{ route ('tickets.edit', $ticket->id) }}"><i class="fa-solid fa-pen-to-square"></i></a>
                     <form action="{{ route('tickets.store')}}" method="POST">
                     @csrf
                     <label for="content">Contenu de votre ticket</label>
@@ -82,6 +76,14 @@
                     <input type="text" name="content">
                     <button type="submit" class="btn btn-primary">Ajouter la tâche</button>
                     </form>
+                </div>   
+            </div>
+            <div class="categoriestickets">
+                @foreach ($list->tickets()->get() as $ticket)
+
+                    <div> {{ $ticket->content }} </div>
+                    <a href="{{ route ('tickets.edit', $ticket->id) }}"><i class="fa-solid fa-pen-to-square"></i></a>
+                    
                     <form action="{{ route('tickets.destroy', $ticket->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
