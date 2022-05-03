@@ -37,7 +37,8 @@ class TicketController extends Controller
         Ticket::create($ticket);
 
         return redirect()
-            ->route('tickets.show', ["ticket" => $ticket["liste_id"]]);
+            ->route('home');
+            // ->route('tickets.show', ["ticket" => $ticket["liste_id"]]);
     }
 
 

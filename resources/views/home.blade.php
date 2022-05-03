@@ -17,7 +17,27 @@
                         </div>
                     @endif
 
-                    <a href="{{ route ('lists.create') }}"> <input type="button" value="Créer vos catégories"></a>
+                    <div class="card-header">{{ __('Créez votre nouvelle catégorie') }}</div>
+
+                    <div class="row ">
+                        <div class="col-4 todo">
+                            <form action="{{ route('lists.store')}}" method="POST">
+                            @csrf
+                            <br>
+                            <input type="text" name="category">
+                            <br>
+                            <br>
+                            <button type="submit" class="btn btn-success">Créer la catégorie</button>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    {{-- <a href="{{ route ('lists.create') }}"> <input type="button" value="Créer vos catégories"></a> --}}
                 </div>
             </div>
         </div>
@@ -46,6 +66,15 @@
                         @method('DELETE')
                         <button class="btn btn-default" type="submit"><i class="fa-solid fa-trash"></i></button>
                     </form>
+
+                    <form action="{{ route('tickets.store', ["ticket" => $list->id])}}" method="POST">
+                    @csrf
+                    <label for="content">Contenu de votre ticket</label>
+                    <br>
+                    <input type="hidden" name="liste_id" value="{{$list->id}}" />
+                    <input type="text" name="content">
+                    <button type="submit" class="btn btn-primary">Ajouter la tâche</button>
+                    </form>
                 </div>   
             </div>
             <div class="categoriestickets">
@@ -53,7 +82,7 @@
 
                     <div> {{ $ticket->content }} </div>
                     <a href="{{ route ('tickets.edit', $ticket->id) }}"><i class="fa-solid fa-pen-to-square"></i></a>
-
+                    
                     <form action="{{ route('tickets.destroy', $ticket->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
