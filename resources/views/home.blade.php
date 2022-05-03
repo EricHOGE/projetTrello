@@ -27,7 +27,7 @@
     
         <h1 class="title">Liste</h1>
 
-    <div class="cardList">   
+    <div class="cardList" style="flex-direction:row; margin:30px; gap: 4rem; justify-content: center">   
         @foreach ($categories as $list)
         <div class="categorieslists">
             <div class="lists">
