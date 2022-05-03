@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Liste;
+use App\Models\Ticket;
 
 class ListController extends Controller
 {

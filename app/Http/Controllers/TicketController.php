@@ -12,7 +12,7 @@ class TicketController extends Controller
     public function index()
     {
         $tickets = Ticket::all();
-        return view('tickets.index', compact('tickets'));
+        return view('home', compact('tickets'));
     }
 
 
@@ -44,7 +44,7 @@ class TicketController extends Controller
     public function show($liste_id)
     {
         $tickets = Ticket::where('liste_id', $liste_id)->get();
-        return view('tickets.index', compact('tickets', 'liste_id'));
+        return view('home', compact('tickets', 'liste_id'));
     }
 
 

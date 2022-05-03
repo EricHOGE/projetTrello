@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Liste;
+use App\Models\Ticket;
 
 
 class HomeController extends Controller
@@ -27,6 +28,16 @@ class HomeController extends Controller
     {
         $categories = Liste::all();
         return view('home', compact('categories'));
-        
+        // $categories = Liste::all();
+        // return view('home', compact('categories'));
+
+
+
+    }
+    public function show($liste_id)
+    {
+        $categories = Liste::all();
+        $tickets = Ticket::where('liste_id', $liste_id)->get();
+        return view('home', compact('tickets', 'categories'));
     }
 }
