@@ -28,8 +28,7 @@ class HomeController extends Controller
     {
         $categories = Liste::all();
         return view('home', compact('categories'));
-        // $categories = Liste::all();
-        // return view('home', compact('categories'));
+
 
 
 

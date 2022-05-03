@@ -27,8 +27,13 @@ class ListController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'category' => 'required|string|max:255'
+        ]);
+
         $list = [
             'category' => $request->input('category'),
+            'user_id' => $request->input('user_id')
         ];
 
         Liste::create($list);

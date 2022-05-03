@@ -2,6 +2,13 @@
 
 @section('content')
 <div class="container">
+    <div class="row">
+        @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <p>{{ $error }}</p>
+        @endforeach
+        @endif
+    </div>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -24,10 +31,12 @@
                             @csrf
                             <br>
                             <input type="text" name="category">
+                            <input type="hidden" name="user_id" value="{{Auth::user()->id}}" />
                             <br>
                             <br>
                             <button type="submit" class="btn btn-success">Créer la catégorie</button>
                             </form>
+
                         </div>
                     </div>
 
@@ -70,6 +79,11 @@
                     <input type="text" name="content">
                     <button type="submit" class="btn btn-primary">Ajouter la tâche</button>
                     </form>
+                        {{-- @if ($errors->any())
+                            @foreach ($errors->all() as $error)
+                                <p>{{ $error }}</p>
+                            @endforeach
+                        @endif --}}
                 </div>   
             </div>
             <div class="categoriestickets">
