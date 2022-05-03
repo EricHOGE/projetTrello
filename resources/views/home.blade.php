@@ -5,9 +5,6 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                
-
-    
 
                 <div class="card-body">
 
@@ -17,20 +14,15 @@
                         </div>
                     @endif
 
-                    <div class="card-header">{{ __('Créez votre nouvelle catégorie') }}</div>
-
-                    <div class="row ">
-                        <div class="col-4 todo">
+                
                             <form action="{{ route('lists.store')}}" method="POST">
                             @csrf
-                            <br>
-                            <input type="text" name="category">
-                            <br>
-                            <br>
+                            <label for="categorytitle">{{ __('Créez votre nouvelle catégorie') }}</label>
+                            <input type="text" name="category" id="categorytitle">
                             <button type="submit" class="btn btn-success">Créer la catégorie</button>
                             </form>
-                        </div>
-                    </div>
+                        
+                   
 
                 </div>
             </div>
