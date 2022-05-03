@@ -28,10 +28,10 @@
                     @auth
                         <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500" style="font-size:172%;" >SE CONNECTER</a>
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500" style="font-size:172%;" >Se connecter</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500" style="font-size:200%; background-color:rgb(22, 201, 162); border-radius:4%; margin-right:60px" >S'INSCRIRE</a>
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500" style="font-size:200%; background-color:rgb(240, 202, 100); border-radius:4%; margin-right:60px" >S'INSCRIRE</a>
                         @endif
                     @endauth
                 </div>
@@ -40,11 +40,11 @@
                 <div class="logo" style="text-align: center; margin-bottom: 15%;">
                     <img src="images/todoteam2.png" alt="logo" height="100 px" style="margin-top:5%;">
                     <h1 style="margin-top:4%"; text-decoration>Plus qu'un travail. C'est une manière de travailler ensemble.</h1>
-                    <h3 style=margin-left:20%;margin-right:20%>Démarrez avec un tableau, des listes et des cartes Trello. Personnalisez et ajoutez d'autres fonctionnalités à mesure que le travail de votre équipe s'élargit. Gérez des projets, organisez des tâches et développez l'esprit d'équipe, le tout au même endroit.</h3>
+                    <h3 style=margin-left:20%;margin-right:20%>Démarrez avec un tableau et des listes. Personnalisez et ajoutez d'autres fonctionnalités à mesure que le travail de votre équipe s'élargit. Gérez des projets, organisez des tâches et développez l'esprit d'équipe, le tout au même endroit.</h3>
                     <br><br><br>
 
                     <div class="container py-3"> <div class="row"> <div class="col-lg-8 d-lg-flex flex-row-reverse text-center align-items-center"> <p class="mb-2 mb-lg-0">Bientôt disponible.</p> </div> <div class="col-6 col-md-3 offset-md-3 offset-lg-0 col-lg-2 pr-1">  <img src="https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/spirit/apps/0b6d7bcb7ee4c84ef5e8141269925e9a/apple.svg" alt="Disponible sur l'App&nbsp;Store" class="w-100 img-fluid" width="217" height="64"> </a> </div> <div class="col-6 col-md-3 col-lg-2 pl-1">  <img src="https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/spirit/apps/c3a2a289499157072145f1bd73d7610d/google.svg" alt="Téléchargez-les sur Google&nbsp;Play" class="w-100 img-fluid" width="217" height="64"> </a> </div> </div> </div>
                 </div>
-               
+            <div class="nice2" style="background:url(/images/nice2.png);background-size:cover; width:100%; height: 100vh; background-repeat: no-repeat; background-attachment: fixed;"
     </body>
 </html>

@@ -61,6 +61,5 @@
     </form>
 </div>
 
- <img src="images/fondorange.png" style="width: -webkit-fill-available">
 
 @endsection
