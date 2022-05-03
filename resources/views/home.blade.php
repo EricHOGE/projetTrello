@@ -42,7 +42,6 @@
         <h1 class="title">Liste</h1>
 
     <div class="cardList">
-        <div>
         @foreach ($categories as $list)
         <div class="categorieslists">
             <div class="lists">
