@@ -21,20 +21,16 @@
                         </div>
                     @endif
 
+                    <form action="{{ route('lists.store')}}" method="POST">
+                        @csrf
+                        <br>
+                        <input type="text" name="category">
+                        <input type="hidden" name="user_id" value="{{Auth::user()->id}}" />
+                        <br>
+                        <br>
+                        <button type="submit" class="btn btn-success">Créer la catégorie</button>
+                    </form>
                 
-                            <form action="{{ route('lists.store')}}" method="POST">
-                            @csrf
-                            <br>
-                            <input type="text" name="category">
-                            <input type="hidden" name="user_id" value="{{Auth::user()->id}}" />
-                            <br>
-                            <br>
-                            <button type="submit" class="btn btn-success">Créer la catégorie</button>
-                            </form>
-
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
