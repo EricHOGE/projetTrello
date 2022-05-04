@@ -40,11 +40,12 @@
 
     
         <h1 class="title" style="display:flex; justify-content:center">Liste des catégories</h1>
+ 
 
-    <div class="cardList">
-        @foreach ($categories as $list)
+         @foreach ($categories as $list)
         @if ($list->user_id != Auth::user()->id)
-       @else
+        @else
+        <div class="cardList">
         <div class="categorieslists">
             <div class="lists">
                 <div>
