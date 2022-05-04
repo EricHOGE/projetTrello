@@ -60,6 +60,7 @@
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
+                                <a class="btn btn-primary" href="{{ route('invites.create') }}">Invitez quelqu'un</a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -82,9 +83,9 @@
         <main >
 <div class="nice" style="background:url(/images/nice.png);background-size:cover; width:100%; height: 100vh; overflow-y:scroll; background-repeat: no-repeat; background-attachment: fixed;">
             
-                <div class="register">
-                @yield('content')
-                    <div>
+                 <div class="register">
+                         @yield('content')
+                 <div>
                         @yield('tickets')
                     </div>
                 </div>
