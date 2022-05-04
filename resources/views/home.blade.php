@@ -12,9 +12,6 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                
-
-    
 
                 <div class="card-body">
 
@@ -24,23 +21,16 @@
                         </div>
                     @endif
 
-                    <div class="card-header">{{ __('Créez votre nouvelle catégorie') }}</div>
-
-                    <div class="row ">
-                        <div class="col-4 todo">
-                            <form action="{{ route('lists.store')}}" method="POST">
-                            @csrf
-                            <br>
-                            <input type="text" name="category">
-                            <input type="hidden" name="user_id" value="{{Auth::user()->id}}" />
-                            <br>
-                            <br>
-                            <button type="submit" class="btn btn-success">Créer la catégorie</button>
-                            </form>
-
-                        </div>
-                    </div>
-
+                    <form action="{{ route('lists.store')}}" method="POST">
+                        @csrf
+                        <br>
+                        <input type="text" name="category">
+                        <input type="hidden" name="user_id" value="{{Auth::user()->id}}" />
+                        <br>
+                        <br>
+                        <button type="submit" class="btn btn-success">Créer la catégorie</button>
+                    </form>
+                
                 </div>
             </div>
         </div>
