@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ListController;
 use App\Http\Controllers\TicketController;
+use App\Http\Controllers\InviteController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -28,3 +29,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('/lists', ListController::class);
 
 Route::resource('/tickets', TicketController::class);
+
+Route::resource('/lists', InviteController::class);
