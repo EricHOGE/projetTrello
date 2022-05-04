@@ -2,12 +2,16 @@
 
 @section('content')
 <div class="container">
+    <div class="row">
+        @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <p>{{ $error }}</p>
+        @endforeach
+        @endif
+    </div>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                
-
-    
 
                 <div class="card-body">
 
@@ -17,18 +21,17 @@
                         </div>
                     @endif
 
-                    <div class="card-header">{{ __('Créez votre nouvelle catégorie') }}</div>
-
-                    <div class="row ">
-                        <div class="col-4 todo">
+                
                             <form action="{{ route('lists.store')}}" method="POST">
                             @csrf
                             <br>
                             <input type="text" name="category">
+                            <input type="hidden" name="user_id" value="{{Auth::user()->id}}" />
                             <br>
                             <br>
                             <button type="submit" class="btn btn-success">Créer la catégorie</button>
                             </form>
+
                         </div>
                     </div>
 
@@ -40,7 +43,7 @@
 
 
     
-        <h1 class="title">Liste</h1>
+        <h1 class="title" style="display:flex; justify-content:center">Liste des catégories</h1>
 
     <div class="cardList">
         @foreach ($categories as $list)
@@ -71,6 +74,11 @@
                     <input type="text" name="content">
                     <button type="submit" class="btn btn-primary">Ajouter la tâche</button>
                     </form>
+                        {{-- @if ($errors->any())
+                            @foreach ($errors->all() as $error)
+                                <p>{{ $error }}</p>
+                            @endforeach
+                        @endif --}}
                 </div>   
             </div>
             <div class="categoriestickets">
