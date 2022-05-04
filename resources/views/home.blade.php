@@ -42,8 +42,11 @@
         <h1 class="title" style="display:flex; justify-content:center">Liste des catégories</h1>
  
         <div class="cardList">
+        @foreach ($invited as $invite)
+            
+           
         @foreach ($categories as $list)
-        @if ($list->user_id != Auth::user()->id)
+        @if ($list->user_id != Auth::user()->id) 
         @else
         <div class="categorieslists">
             <div class="lists">
