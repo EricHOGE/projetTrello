@@ -53,6 +53,8 @@
 
     <div class="cardList">
         @foreach ($categories as $list)
+        @if ($list->user_id != Auth::user()->id)
+       @else
         <div class="categorieslists">
             <div class="lists">
                 <div>
@@ -80,11 +82,6 @@
                     <input type="text" name="content">
                     <button type="submit" class="btn btn-primary">Ajouter la tâche</button>
                     </form>
-                        {{-- @if ($errors->any())
-                            @foreach ($errors->all() as $error)
-                                <p>{{ $error }}</p>
-                            @endforeach
-                        @endif --}}
                 </div>   
             </div>
             <div class="categoriestickets">
@@ -101,6 +98,7 @@
                 
                 @endforeach
             </div>
+            @endif
         </div>
         
         @endforeach
