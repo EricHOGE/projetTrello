@@ -30,4 +30,4 @@ Route::resource('/lists', ListController::class);
 
 Route::resource('/tickets', TicketController::class);
 
-Route::resource('/lists', InviteController::class);
+Route::resource('/invites', InviteController::class);

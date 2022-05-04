@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Invite;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class InviteController extends Controller
 {
@@ -13,7 +16,8 @@ class InviteController extends Controller
      */
     public function index()
     {
-        //
+        // $invites = Invite::where("user_email", "=", Auth::user()->email);
+        // return view('invite.invite', compact("invites"));
     }
 
     /**
@@ -23,7 +27,9 @@ class InviteController extends Controller
      */
     public function create()
     {
-        return view('invites.invite');
+        // $invites = Invite::where("user_email", "=", Auth::email())->get();
+        // return view('invite.invite', compact("invites"));
+        return view('invites.create');
     }
 
     /**
@@ -34,7 +40,19 @@ class InviteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'user_email' => 'required|string|max:255'
+        ]);
+
+        $invite = [
+            'user_email' => $request->user_email,
+
+        ];
+        Invite::create($invite);
+
+        return redirect()
+            ->route('home')
+            ->with('message', 'Votre invitation a bien été envoyée');
     }
 
     /**
