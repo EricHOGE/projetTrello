@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Invite;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -44,10 +45,18 @@ class InviteController extends Controller
             'user_email' => 'required|string|max:255'
         ]);
 
-        $invite = [
-            'user_email' => $request->user_email,
+        $user = User::where("email", "=", $request->user_email)->get();
 
+        if (count($user) == 0) {
+            return redirect()
+                ->back()
+                ->with('message', 'L\'utilisateur invité n\'existe pas');
+        }
+
+        $invite = [
+            "user_email" => $request->user_email
         ];
+
         Invite::create($invite);
 
         return redirect()

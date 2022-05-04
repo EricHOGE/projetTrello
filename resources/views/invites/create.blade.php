@@ -14,8 +14,10 @@
         <button type="submit" class="btn btn-primary">Inviter</button>
         </form>
     </div>
-    {{-- @foreach ($invites as $invite)
-        <h1>La personne invitée n'a pas de compte</h1>
-    @endforeach --}}
+    @if(session()->has('message'))
+            <div class="alert alert-danger">
+                {{ session()->get('message') }}
+            </div>
+        @endif
 </div>
 @endsection
