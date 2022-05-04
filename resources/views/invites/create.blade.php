@@ -11,6 +11,7 @@
         <label for="user_email">E-mail de l'invité</label>
         <br>
         <input type="text" name="user_email">
+        <input type="hidden" name="invite_email" value="{{ Auth::user()->email }}">
         <button type="submit" class="btn btn-primary">Inviter</button>
         </form>
     </div>

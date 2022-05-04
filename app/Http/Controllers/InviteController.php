@@ -54,7 +54,8 @@ class InviteController extends Controller
         }
 
         $invite = [
-            "user_email" => $request->user_email
+            "user_email" => $request->user_email,
+            'invite_email' => $request->invite_email
         ];
 
         Invite::create($invite);
