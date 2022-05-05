@@ -28,7 +28,7 @@
                             <br>
                             <br>
                             <button type="submit" class="btn btn-success">+ Créer la catégorie</button>
-                        </form>
+                        {{-- </form>
                         <br>
                         <input type="text" name="category">
                         <input type="hidden" name="user_id" value="{{Auth::user()->id}}" />
@@ -36,7 +36,7 @@
                         <br>
                         <br>
                         <button type="submit" class="btn btn-success">Créer la catégorie</button>
-                    </form>
+                    </form> --}}
                 
                 </div>
             </div>
@@ -47,7 +47,7 @@
     <br><br>
     <h1 class="title" style="display:flex; justify-content:center">Liste des catégories</h1>
  
-    <div class="cardList">
+    {{-- <div class="cardList">
         @foreach ($categories as $list)
             @if ($list->user_id != Auth::user()->id)
             @else
@@ -106,7 +106,7 @@
                 </div>
             @endif
         @endforeach
-    </div>
+    </div> --}}
 </div>
 
 
