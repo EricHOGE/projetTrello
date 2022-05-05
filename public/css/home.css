@@ -6,9 +6,18 @@
     box-shadow: 10px 10px 5px 5px rgb(0 0 0 / 20%);
     flex-grow: 1;
 }
+
+.card-body {
+    background-color: rgba(221, 199, 214, 0.493);
+    box-shadow: 10px 10px 5px 5px rgb(0 0 0 / 20%);
+    border-radius: 0px;
+}
+
 .lists {
     display: flex;
     align-items: center;
+    flex-direction: column;
+    width: 100%;
 }
 .trashIcon {
     align-items: flex-end;
@@ -19,4 +28,21 @@
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: flex-start;
+}
+
+.col-md-4 {
+    text-align: center;
+}
+
+.headlist {
+    display: flex;
+    flex-direction: unset;
+    align-items: center;
+    gap: 10px;
+}
+
+.categoriestickets {
+    display: flex;
+    gap: 2rem;
+    margin: 10px;
 }

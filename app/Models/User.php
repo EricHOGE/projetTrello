@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Invite;
+use App\Models\Liste;
 
 class User extends Authenticatable
 {
@@ -44,6 +45,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function lists(): HasMany
+    {
+        return $this->hasMany(Liste::class, "user_id", "id");
+    }
+
     public function invites(): BelongsTo
     {
         return $this->BelongsTo(Invite::class);
