@@ -6,15 +6,15 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div> --}}
-{{--                 <div class="logo" style="/* text-align: center; */ /* margin-bottom: 15%; */width: 100%;height: 100%;background-image: url(images/fondvert.png);background-attachment: fixed;background-size: cover;position: fixed;top: 0px;left: 0px; background-position-y:-178px">
+{{--                 <div class="logo">
  --}}                    
 </div>
 
 {{-- <br><br><br><br><br> --}}
 
-<div class="card-body" style="width:25%; text-align:center; right:35%; position:absolute;">
+<div class="card-body register">
    
-    <h1>S'INSCRIRE</h1>
+    <u><h1>S'INSCRIRE</h1></u>
     <br>
     <form method="POST" action="{{ route('register') }}">
         @csrf

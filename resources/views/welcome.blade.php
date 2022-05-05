@@ -56,7 +56,7 @@
 
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
 
-            <div class="nice2" style="background:url(/images/nice2.png);background-size:cover; width:100%; height: 100vh; background-repeat: no-repeat; background-attachment: fixed;"> 
+            <div class="nice2"> 
                 <div class="centertext">
                 <h1 class="text">Travailler ensemble c'est plus qu'un travail.</h1>
                 <h4 class="text1">Démarrez avec un tableau et des listes. Personnalisez et ajoutez d'autres fonctionnalités à mesure que le travail de votre équipe s'élargit. Gérez des projets, organisez des tâches et développez l'esprit d'équipe, le tout au même endroit.</h4>
