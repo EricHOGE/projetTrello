@@ -7,7 +7,7 @@
 
 
         {{-- Section permettant d'afficher les erreurs de saisie  --}} 
-        <div class="row">
+        <div class="row erreur">
             @if ($errors->any())
             @foreach ($errors->all() as $error)
                 <p>{{ $error }}</p>

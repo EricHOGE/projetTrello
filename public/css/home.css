@@ -73,3 +73,7 @@
     gap: 1rem;
     margin-left: 10px;
 }
+.erreur{
+    text-align: center;
+    color: red;
+}
