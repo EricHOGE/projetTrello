@@ -22,10 +22,6 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{asset('bootstrap.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/home.css')}}">
-    <link rel="stylesheet" href="{{asset('css/login.css')}}">
-    <link rel="stylesheet" href="{{asset('css/register.css')}}">
-    <link rel="stylesheet" href="{{asset('css/app.style.css')}}">
-    <link rel="stylesheet" href="{{asset('css/welcome.css')}}">
 </head>
 <body>
     <div id="app">
@@ -85,7 +81,7 @@
         </nav>
 
         <main >
-<div class="nice">
+<div class="nice" style="background:url(/images/nice.png);background-size:cover; width:100%; height: 100vh; overflow-y:scroll; background-repeat: no-repeat; background-attachment: fixed;">
             
                  <div class="register">
                          @yield('content')
