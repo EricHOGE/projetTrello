@@ -49,7 +49,7 @@
                         <div class="headlist">
                         
                             <div>
-                                <h2>{{ $list->category }}</h2>
+                                <h2 class="listTitle">{{ $list->category }}</h2>
                             </div>  
                             
                             <div class="editIcon">
@@ -65,14 +65,13 @@
                                 </form>
                             </div>  
                         </div>
-                        <div>
-                            <form action="{{ route('tickets.store', ["ticket" => $list->id])}}" method="POST">
+                        <div class="inputTask">
+                            <form  action="{{ route('tickets.store', ["ticket" => $list->id])}}" method="POST">
                             @csrf
-                            <label for="content">Contenu de votre ticket</label>
-                            <br>
+                            
                             <input type="hidden" name="liste_id" value="{{$list->id}}" />
-                            <input type="text" name="content">
-                            <button type="submit" class="btn btn-primary">Ajouter la tâche</button>
+                            <input type="text" name="content" placeholder="Ajouter une tâche">
+                            <button type="submit" class="btn btn-primary">+</button>
                             </form>
                         </div>
                         
@@ -80,18 +79,20 @@
 
                         <div class="categoriestickets">
                             <div> 
-                                <p>{{ $ticket->content }}</p>
+                                {{ $ticket->content }}
                             </div>
-                            <div>
-                                <a href="{{ route ('tickets.edit', $ticket) }}"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <div class="iconTicket">
+                                <div>
+                                    <a href="{{ route ('tickets.edit', $ticket) }}"><i class="fa-solid fa-pen-to-square"></i></a>
+                                </div>
+                                <div>
+                                    <form action="{{ route('tickets.destroy', $ticket) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-danger">Supprimer</button>
+                                    </form>
+                                </div> 
                             </div>
-                            <div>
-                                <form action="{{ route('tickets.destroy', $ticket) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-danger">Supprimer le ticket</button>
-                                </form>
-                            </div> 
                         </div>
 
                         @endforeach
