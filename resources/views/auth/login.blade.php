@@ -8,14 +8,14 @@
                 <div class="card-header">{{ __('Login') }}</div>
                 --}}
                 {{-- <br><br><br><br><br> --}}
-                <div class="card-body" style="width:25%; text-align:center; right:35%; position:absolute;">
-                    <h1>SE CONNECTER</h1>
+                <div class="card-body login">
+                    <u><h1>SE CONNECTER</h1></u>
                     <br>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Adresse Mail') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -29,7 +29,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Mot de passe') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -48,8 +48,8 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
+                                    <label class="form-check-label remember" for="remember">
+                                        {{ __('Se souvenir de moi') }}
                                     </label>
                                 </div>
                             </div>
@@ -63,6 +63,7 @@
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
+                
                                         {{ __('Mot de passe oublié ?') }}
                                     </a>
                                 @endif

@@ -1,10 +1,6 @@
-.categorieslists {
+.title {
     display: flex;
-    border: 4px solid rgb(211 188 165);
-    background-color: #e9daccc2;
-    border-radius: 8px;
-    box-shadow: 10px 10px 5px 5px rgb(0 0 0 / 20%);
-    flex-grow: 1;
+    justify-content: center;
 }
 
 .card-body {
@@ -13,36 +9,67 @@
     border-radius: 0px;
 }
 
-.lists {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-}
-.trashIcon {
-    align-items: flex-end;
+.title {
+    text-align: center;
+    margin: 50px;
 }
 
 .cardList {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: flex-start;
 }
 
-.col-md-4 {
+.cardList .categoriesLists {
+    display: flex;
+    border: 4px solid rgb(211 188 165);
+    background-color: #e9daccc2;
+    border-radius: 8px;
+    box-shadow: 10px 10px 5px 5px rgb(0 0 0 / 20%);
+    margin-left: 2rem;
+    margin-bottom: 50px;
+}
+
+.cardList .categoriesLists .lists {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px;
+}
+
+.cardList .categoriesLists .lists .headList {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.cardList .categoriesLists .lists .headList .listTitle {
+    margin-bottom: 0 !important;
+}
+
+.cardList .categoriesLists .lists .inputTask {
+    margin-bottom: 10px;
     text-align: center;
 }
 
-.headlist {
+.cardList .categoriesLists .lists .inputTask form {
     display: flex;
-    flex-direction: unset;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    gap: 1rem;
 }
 
-.categoriestickets {
+.cardList .categoriesLists .lists .categoriesTickets {
     display: flex;
-    gap: 2rem;
-    margin: 10px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0 10px 0;
+}
+
+.cardList .categoriesLists .lists .categoriesTickets .iconTicket {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 10px;
 }
