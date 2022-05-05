@@ -1,0 +1,1 @@
+<p>Vous avez été invité à partager des projets</p>

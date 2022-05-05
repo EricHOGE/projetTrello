@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Invite;
 use App\Models\User;
+use App\Mail\WelcomeEmail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -59,6 +61,9 @@ class InviteController extends Controller
         ];
 
         Invite::create($invite);
+
+        Mail::to($request->user_email)->send(new WelcomeEmail());
+        
 
         return redirect()
             ->route('home')

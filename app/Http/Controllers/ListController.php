@@ -33,7 +33,8 @@ class ListController extends Controller
 
         $list = [
             'category' => $request->input('category'),
-            'user_id' => $request->input('user_id')
+            'user_id' => $request->input('user_id'),
+            'auth_email' => $request->input('auth_email')
         ];
 
         Liste::create($list);
