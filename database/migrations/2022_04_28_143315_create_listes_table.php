@@ -16,6 +16,7 @@ class CreateListesTable extends Migration
     {
         Schema::create('listes', function (Blueprint $table) {
             $table->id();
+            $table->string('auth_email')->nullable();
             $table->integer('user_id')->nullable();
             $table->string('category')->nullable();
             $table->timestamps();
