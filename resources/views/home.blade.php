@@ -25,9 +25,11 @@
                             <h3>Nommez votre catégorie</h3>
                             <input type="text" name="category" placeholder="Votre catégorie...">
                             <input type="hidden" name="user_id" value="{{Auth::user()->id}}" />
+                            <input type="hidden" name="auth_email" value="{{Auth::user()->email}}" />
                             <br>
                             <br>
                             <button type="submit" class="btn btn-success">+ Créer la catégorie</button>
+                        </form>    
                         {{-- </form>
                         <br>
                         <input type="text" name="category">
