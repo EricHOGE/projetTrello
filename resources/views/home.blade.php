@@ -150,7 +150,7 @@
 
                     {{-- Section correspondant aux tickets  --}} 
                     @foreach ($list->tickets()->get() as $ticket)
-                    <div class="categoriesTickets">
+                    <div class="categoriesTickets" draggable="true">
                         <div> {{ $ticket->content }} </div>
                         <div class="iconTicket">
                             <div>
