@@ -44,7 +44,7 @@ function dragStart() {
 
 function dragEnd() {
     console.log("drag ended");
-    this.className = "lists";
+    this.className = "categoriesTickets";
     dragItem = null;
 }
 
