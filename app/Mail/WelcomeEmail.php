@@ -29,7 +29,7 @@ class WelcomeEmail extends Mailable
      */
     public function build()
     {
-        $user= Auth::user();
+        $user= Auth::user(); // cette ligne ne sert à rien dans ce contexte, vous pouvez supprimer
 
         return $this->view('mail.welcomemail')
         ->from('trellolike@bocal.com', 'Trellolike project')
