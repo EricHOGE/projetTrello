@@ -1,3 +1,7 @@
+/**
+ * Ici vous auriez pu regrouper tous les backgroud comme ceci :
+ * background: url(/images/nice.png) no-repeat fixed;
+ */
 .nice {
     background: url(/images/nice.png);
     background-size: cover;

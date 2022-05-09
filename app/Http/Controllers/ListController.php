@@ -11,7 +11,7 @@ class ListController extends Controller
 
     public function index()
     {
-        // 
+        //
     }
 
     /**
@@ -47,7 +47,7 @@ class ListController extends Controller
 
     public function show($id)
     {
-        // 
+        //
     }
 
 
@@ -60,7 +60,10 @@ class ListController extends Controller
 
     public function update(Request $request, $id)
     {
-        
+        /**
+         * Attention il manque la validation
+         */
+
         $list = Liste::findOrfail($id);
         $list->category = $request->input('category');
         $list->save();

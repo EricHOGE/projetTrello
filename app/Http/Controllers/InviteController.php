@@ -47,8 +47,14 @@ class InviteController extends Controller
             'user_email' => 'required|string|max:255'
         ]);
 
+        /**
+         * Ici vous auriez pu mettre ->first() au lieu de ->get() car vous êtes certain de récupérer un seul user
+         */
         $user = User::where("email", "=", $request->user_email)->get();
 
+        /**
+         * Puis ici il suffit simplement de faire if ($user)
+         */
         if (count($user) == 0) {
             return redirect()
                 ->back()
@@ -63,7 +69,7 @@ class InviteController extends Controller
         Invite::create($invite);
 
         Mail::to($request->user_email)->send(new WelcomeEmail());
-        
+
 
         return redirect()
             ->route('home')
