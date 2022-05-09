@@ -14,6 +14,10 @@ class Ticket extends Model
     protected $guarded = [
         'id',
     ];
+
+    /**
+     * Attention, ici le $id dans le where est undefined
+     */
     public function liste(): BelongsTo
     {
         return $this->belongsTo(Liste::class)->where($id);

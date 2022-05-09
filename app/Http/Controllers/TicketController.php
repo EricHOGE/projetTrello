@@ -27,7 +27,7 @@ class TicketController extends Controller
         $request->validate([
             'content' => 'required|string|max:255'
         ]);
-        
+
         $ticket = [
             'content' => $request->input('content'),
             'liste_id' => $request->input('liste_id')
@@ -37,7 +37,7 @@ class TicketController extends Controller
 
         return redirect()
             ->route('home');
-          
+
     }
 
 
@@ -57,6 +57,9 @@ class TicketController extends Controller
 
     public function update(Request $request, $id)
     {
+        /**
+         * Attention il manque la validation
+         */
 
         $ticket = Ticket::findOrfail($id);
         $ticket->content = $request->input('content');
@@ -68,7 +71,7 @@ class TicketController extends Controller
 
     public function destroy($id)
     {
-       
+
         $ticket = Ticket::findOrfail($id);
         $ticket->delete();
 
